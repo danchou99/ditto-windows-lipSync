@@ -33,7 +33,7 @@ Ant Group
 
 ## 📌 Updates
 
-* [2025.01.10] 🔥 We release our inference [codes](https://github.com/antgroup/ditto-talkinghead) and [models](https://huggingface.co/digital-avatar/ditto-talkinghead).
+* [2025.01.10] 🔥 We release our inference [codes](https://github.com/antgroup/ditto-talkinghead) and [models](https://huggingface.co/justinjohn-03/ditto-talkinghead-windows).
 * [2024.11.29] 🔥 Our [paper](https://arxiv.org/abs/2411.19509) is in public on arxiv.
 
  
@@ -47,9 +47,9 @@ Tested Environment
 - tensorRT: 8.6.1  
 
 
-Clone the codes from [GitHub](https://github.com/antgroup/ditto-talkinghead):  
+Clone the codes from [GitHub](https://github.com/justinjohn0306/ditto-talkinghead-windows):  
 ```bash
-git clone https://github.com/antgroup/ditto-talkinghead
+git clone https://github.com/justinjohn0306/ditto-talkinghead-windows
 cd ditto-talkinghead
 ```
 
@@ -62,10 +62,10 @@ conda activate ditto
 
 ## 📥 Download Checkpoints
 
-Download checkpoints from [HuggingFace](https://huggingface.co/digital-avatar/ditto-talkinghead) and put them in `checkpoints` dir:
+Download checkpoints from [HuggingFace](https://huggingface.co/justinjohn-03/ditto-talkinghead-windows) and put them in `checkpoints` dir:
 ```bash
 git lfs install
-git clone https://huggingface.co/digital-avatar/ditto-talkinghead checkpoints
+git clone https://huggingface.co/justinjohn-03/ditto-talkinghead-windows checkpoints
 ```
 
 The `checkpoints` should be like:
@@ -74,6 +74,9 @@ The `checkpoints` should be like:
 ├── ditto_cfg
 │   ├── v0.4_hubert_cfg_trt.pkl
 │   └── v0.4_hubert_cfg_trt_online.pkl
+├── plugins
+│   ├── grid_sample_3d_plugin.dll
+│   └── libgrid_sample_3d_plugin.so
 ├── ditto_onnx
 │   ├── appearance_extractor.onnx
 │   ├── blaze_face.onnx
@@ -88,7 +91,7 @@ The `checkpoints` should be like:
 │   ├── motion_extractor.onnx
 │   ├── stitch_network.onnx
 │   └── warp_network.onnx
-└── ditto_trt_Ampere_Plus
+└── ditto_trt_3090
     ├── appearance_extractor_fp16.engine
     ├── blaze_face_fp16.engine
     ├── decoder_fp16.engine
