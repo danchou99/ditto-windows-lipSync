@@ -65,4 +65,6 @@ dependencies:
       - threadpoolctl==3.5.0
       - tifffile==2024.12.12
       - tqdm==4.67.1
+      - polygraphy
+      - colored
       - triton-3.1.0-cp310-cp310-win_amd64.whl
