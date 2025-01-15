@@ -43,7 +43,8 @@ Ant Group
 Tested Environment  
 - System: Windows 11
 - GPU: 3090  
-- Python: 3.10  
+- Python: 3.10
+- CUDA: 12.1
 - tensorRT: 8.6.1  
 
 
