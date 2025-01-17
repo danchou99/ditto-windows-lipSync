@@ -92,22 +92,33 @@ class TRTWrapper:
     def __init__(
         self,
         trt_file: str,
-        plugin_file_list: list = [],
+        plugin_file_list: list = ["./checkpoints/plugins/grid_sample_3d_plugin.dll"],
     ) -> None:
         # Load custom plugins
         for plugin_file in plugin_file_list:
-            ctypes.cdll.LoadLibrary(plugin_file)
+            if os.path.isfile(plugin_file):
+                print(f"Loading plugin: {plugin_file}")
+                try:
+                    ctypes.cdll.LoadLibrary(plugin_file)
+                except OSError as e:
+                    raise RuntimeError(f"Failed to load plugin {plugin_file}: {e}")
+            else:
+                raise FileNotFoundError(f"Plugin file not found: {plugin_file}")
 
-        # Load engine bytes from file
+        # Load TensorRT engine
+        if not os.path.isfile(trt_file):
+            raise FileNotFoundError(f"Engine file not found: {trt_file}")
+
         self.model = trt_file
         with open(trt_file, "rb") as f, trt.Runtime(logger) as runtime:
-            assert runtime
+            assert runtime, "Failed to create TensorRT runtime."
             self.engine = runtime.deserialize_cuda_engine(f.read())
-        assert self.engine
+        assert self.engine, "Failed to deserialize TensorRT engine."
+
         self.buffer = OrderedDict()
         self.output_allocator_map = OrderedDict()
         self.context = self.engine.create_execution_context()
-        return
+        print(f"Successfully loaded TensorRT engine: {trt_file}")
 
     def setup(self, input_data: dict = {}) -> None:
         for name, value in self.buffer.items():
