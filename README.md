@@ -1,6 +1,10 @@
 <h2 align='center'>Ditto: Motion-Space Diffusion for Controllable Realtime Talking Head Synthesis</h2>
 
 
+## Update
+
+* Created a real-time version to have the avatar talk to someone in real-time using LLM's response which is then converted to audio for lip synchronization.
+
 ## 🛠️ Installation
 
 Tested Environment  
