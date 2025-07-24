@@ -110,7 +110,7 @@ Then run `inference.py` with `--data_root=./checkpoints/ditto_trt_custom`.
 
 
 ## 📧 Acknowledgement
-This repo is forked from <b> jutinjohn0306 </b> implementation of Ditto Talking-head on windows, <a href = 'https://github.com/justinjohn0306/ditto-talkinghead-windows'> </a>. 
+This repo is forked from <b> justinjohn0306 </b> implementation of Ditto Talking-head on windows, which itself is based on Ant group's Ditto Talking Head repo.
 Thanks for their remarkable contribution and released code! If we missed any open-source projects or related articles, we would like to complement the acknowledgement of this specific work immediately.
 
 ## ⚖️ License
