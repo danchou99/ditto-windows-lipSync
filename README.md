@@ -1,50 +1,13 @@
 <h2 align='center'>Ditto: Motion-Space Diffusion for Controllable Realtime Talking Head Synthesis</h2>
 
-<div align='center'>
-    <a href=""><strong>Tianqi Li</strong></a>
-    ·
-    <a href=""><strong>Ruobing Zheng</strong></a><sup>†</sup>
-    ·
-    <a href=""><strong>Minghui Yang</strong></a>
-    ·
-    <a href=""><strong>Jingdong Chen</strong></a>
-    ·
-    <a href=""><strong>Ming Yang</strong></a>
-</div>
-<div align='center'>
-Ant Group
-</div>
-<br>
-<div align='center'>
-    <a href='https://arxiv.org/abs/2411.19509'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
-    <a href='https://digital-avatar.github.io/ai/Ditto/'><img src='https://img.shields.io/badge/Project-Page-blue'></a>
-    <a href='https://huggingface.co/digital-avatar/ditto-talkinghead'><img src='https://img.shields.io/badge/Model-HuggingFace-yellow'></a>
-    <a href='https://github.com/antgroup/ditto-talkinghead'><img src='https://img.shields.io/badge/Code-GitHub-purple'></a>
-    <!-- <a href='https://github.com/antgroup/ditto-talkinghead'><img src='https://img.shields.io/github/stars/antgroup/ditto-talkinghead?style=social'></a> -->
-</div>
-<br>
-<div align="center">
-    <video style="width: 95%; object-fit: cover;" controls loop src="https://github.com/user-attachments/assets/ef1a0b08-bff3-4997-a6dd-62a7f51cdb40" muted="false"></video>
-    <p>
-    ✨  For more results, visit our <a href="https://digital-avatar.github.io/ai/Ditto/"><strong>Project Page</strong></a> ✨ 
-    </p>
-</div>
-
-
-## 📌 Updates
-
-* [2025.01.10] 🔥 We release our inference [codes](https://github.com/antgroup/ditto-talkinghead) and [models](https://huggingface.co/justinjohn-03/ditto-talkinghead-windows).
-* [2024.11.29] 🔥 Our [paper](https://arxiv.org/abs/2411.19509) is in public on arxiv.
-
- 
 
 ## 🛠️ Installation
 
 Tested Environment  
-- System: Windows 11
-- GPU: 3090  
+- System: Windows 10
+- GPU: 3070  
 - Python: 3.10
-- CUDA: 12.1
+- CUDA: 12.4
 - tensorRT: 8.6.1  
 
 
@@ -128,7 +91,7 @@ For example:
 
 ```shell
 python inference.py \
-    --data_root "./checkpoints/ditto_trt_Ampere_Plus" \
+    --data_root "./checkpoints/ditto_trt_3090" \
     --cfg_pkl "./checkpoints/ditto_cfg/v0.4_hubert_cfg_trt.pkl" \
     --audio_path "./example/audio.wav" \
     --source_path "./example/image.png" \
@@ -147,7 +110,8 @@ Then run `inference.py` with `--data_root=./checkpoints/ditto_trt_custom`.
 
 
 ## 📧 Acknowledgement
-Our implementation is based on [S2G-MDDiffusion](https://github.com/thuhcsi/S2G-MDDiffusion) and [LivePortrait](https://github.com/KwaiVGI/LivePortrait). Thanks for their remarkable contribution and released code! If we missed any open-source projects or related articles, we would like to complement the acknowledgement of this specific work immediately.
+This repo is forked from <b> jutinjohn0306 </b> implementation of Ditto Talking-head on windows, <a href = 'https://github.com/justinjohn0306/ditto-talkinghead-windows'> </a>. 
+Thanks for their remarkable contribution and released code! If we missed any open-source projects or related articles, we would like to complement the acknowledgement of this specific work immediately.
 
 ## ⚖️ License
 This repository is released under the Apache-2.0 license as found in the [LICENSE](LICENSE) file.
